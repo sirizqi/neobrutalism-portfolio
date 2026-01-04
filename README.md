@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Neobrutalist Portfolio - Rizqi Sarasajati
 
-## Getting Started
+A production-ready personal portfolio website built with Next.js, Tailwind CSS, shadcn/ui, Contentful, and Supabase.
 
-First, run the development server:
+## Tech Stack
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS (Neobrutalism Design)
+- **Components**: shadcn/ui
+- **Icons**: Lucide React
+- **Data Source**: Contentful (Blogs & Testimonials)
+- **Database**: Supabase (PostgreSQL)
+- **ORM**: Prisma
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Prerequisites
+- Node.js 18+
+- Supabase Account
+- Contentful Account
+
+## Environment Variables
+Create a `.env` file in the root directory and add the following:
+```env
+DATABASE_URL="your-supabase-connection-string"
+DIRECT_URL="your-supabase-direct-connection-string"
+NEXT_PUBLIC_SUPABASE_URL="your-supabase-url"
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY="your-supabase-key"
+
+# Contentful
+CONTENTFUL_SPACE_ID="your-space-id"
+CONTENTFUL_ACCESS_TOKEN="your-access-token"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup & Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Setup Prisma**:
+   ```bash
+   npx prisma generate
+   npx prisma migrate dev --name init_contact_submission
+   ```
 
-## Learn More
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Neobrutalism Styling
+This project uses custom utility classes and design tokens in `src/app/globals.css` to achieve the Neobrutalist look:
+- `neo-border`: Standard thick black/white borders.
+- `neo-shadow`: Hard drop shadows without blur.
+- `neo-shadow-lg`: Large hard drop shadows.
+- `neo-shadow-primary`: Shadows using the primary blue color.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment to Vercel
+1. Push your code to GitHub.
+2. Connect your repository to Vercel.
+3. Add all environment variables in the Vercel dashboard.
+4. Deployment command: `npm run build`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Maintenance
+To update the personal data, edit `src/data/portfolio.js`.
+To manage blogs and testimonials, use the Contentful dashboard.
+To view contact submissions, check the `ContactSubmission` table in Supabase.
