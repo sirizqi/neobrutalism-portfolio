@@ -1,45 +1,83 @@
+import { createClient } from "contentful";
+
 const SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
 
-async function contentfulFetch(query) {
-    if (!SPACE_ID || !ACCESS_TOKEN) {
-        console.warn("Contentful credentials missing. Returning empty data.");
-        return null;
-    }
-
-    const res = await fetch(
-        `https://cdn.contentful.com/spaces/${SPACE_ID}/environments/master/entries?access_token=${ACCESS_TOKEN}&${query}`,
-        { next: { revalidate: 3600 } }
-    );
-
-    if (!res.ok) {
-        throw new Error("Failed to fetch data from Contentful");
-    }
-
-    return res.json();
-}
+const client = createClient({
+    space: SPACE_ID,
+    accessToken: ACCESS_TOKEN,
+});
 
 export async function getLatestBlogs(limit = 7) {
-    const data = await contentfulFetch(`content_type=blogs&order=-sys.createdAt&limit=${limit}`);
-    return data ? data.items : [];
+    if (!SPACE_ID || !ACCESS_TOKEN) return [];
+
+    try {
+        const res = await client.getEntries({
+            content_type: 'blogs',
+            order: '-sys.createdAt',
+            limit,
+            include: 3,
+        });
+        return res.items;
+    } catch (error) {
+        console.error("Error fetching latest blogs:", error);
+        return [];
+    }
 }
 
 export async function getBlogsPage(page = 1, pageSize = 20, query = "") {
+    if (!SPACE_ID || !ACCESS_TOKEN) return { items: [], total: 0 };
+
     const skip = (page - 1) * pageSize;
-    let q = `content_type=blogs&order=-sys.createdAt&limit=${pageSize}&skip=${skip}`;
+    const params = {
+        content_type: 'blogs',
+        order: '-sys.createdAt',
+        limit: pageSize,
+        skip,
+        include: 3,
+    };
     if (query) {
-        q += `&query=${encodeURIComponent(query)}`;
+        params['query'] = query;
     }
-    const data = await contentfulFetch(q);
-    return data ? { items: data.items, total: data.total } : { items: [], total: 0 };
+
+    try {
+        const res = await client.getEntries(params);
+        return { items: res.items, total: res.total };
+    } catch (error) {
+        console.error("Error fetching blogs page:", error);
+        return { items: [], total: 0 };
+    }
 }
 
 export async function getBlogBySlug(slug) {
-    const data = await contentfulFetch(`content_type=blogs&fields.slug=${slug}&limit=1`);
-    return data && data.items.length > 0 ? data.items[0] : null;
+    if (!SPACE_ID || !ACCESS_TOKEN) return null;
+
+    try {
+        const res = await client.getEntries({
+            content_type: 'blogs',
+            'fields.slug': slug,
+            limit: 1,
+            include: 3,
+        });
+        return res.items.length > 0 ? res.items[0] : null;
+    } catch (error) {
+        console.error("Error fetching blog by slug:", error);
+        return null;
+    }
 }
 
 export async function getTestimonials() {
-    const data = await contentfulFetch(`content_type=testimonials&order=-sys.createdAt`);
-    return data ? data.items : [];
+    if (!SPACE_ID || !ACCESS_TOKEN) return [];
+
+    try {
+        const res = await client.getEntries({
+            content_type: 'testimonials',
+            order: '-sys.createdAt',
+            include: 3,
+        });
+        return res.items;
+    } catch (error) {
+        console.error("Error fetching testimonials:", error);
+        return [];
+    }
 }

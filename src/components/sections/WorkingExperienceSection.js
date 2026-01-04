@@ -1,15 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Briefcase } from "lucide-react";
+import { ExternalLink, Briefcase, ChevronDown, ChevronUp } from "lucide-react";
 import Container from "@/components/global/Container";
 import SectionHeader from "@/components/global/SectionHeader";
 import { portfolioData } from "@/data/portfolio";
 
 export default function WorkingExperienceSection() {
     const { experiences } = portfolioData;
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const visibleExperiences = isExpanded ? experiences : experiences.slice(0, 3);
 
     return (
         <Container id="experience">
@@ -19,7 +23,7 @@ export default function WorkingExperienceSection() {
             />
 
             <div className="grid grid-cols-1 gap-12">
-                {experiences.map((exp, index) => (
+                {visibleExperiences.map((exp, index) => (
                     <div key={index} className="border-4 border-black dark:border-white neo-shadow-lg bg-white dark:bg-black overflow-hidden flex flex-col md:flex-row shadow-none group">
                         <div className="md:w-1/3 p-10 bg-primary text-white flex flex-col items-center justify-center border-b-4 md:border-b-0 md:border-r-4 border-black dark:border-white">
                             <div className="w-24 h-24 bg-white border-4 border-black rounded-none flex items-center justify-center mb-6 neo-shadow rotate-3 group-hover:rotate-0 transition-transform">
@@ -62,6 +66,22 @@ export default function WorkingExperienceSection() {
                     </div>
                 ))}
             </div>
+
+            {experiences.length > 3 && (
+                <div className="mt-16 text-center">
+                    <Button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        size="lg"
+                        className="h-16 px-10 text-xl font-black uppercase border-4 border-black dark:border-white neo-shadow-lg neo-hover bg-white dark:bg-black text-black dark:text-white"
+                    >
+                        {isExpanded ? (
+                            <>Show Less <ChevronUp className="ml-3 w-6 h-6" /></>
+                        ) : (
+                            <>See More Experience <ChevronDown className="ml-3 w-6 h-6" /></>
+                        )}
+                    </Button>
+                </div>
+            )}
         </Container>
     );
 }

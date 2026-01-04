@@ -1,15 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import Container from "@/components/global/Container";
 import SectionHeader from "@/components/global/SectionHeader";
 import { portfolioData } from "@/data/portfolio";
 
 export default function ProjectExperienceSection() {
     const { projects } = portfolioData;
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const visibleProjects = isExpanded ? projects : projects.slice(0, 3); // Show 3 items initially for consistency
 
     return (
         <Container id="projects" className="bg-primary/5 dark:bg-primary/10">
@@ -19,7 +23,7 @@ export default function ProjectExperienceSection() {
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {projects.map((project, index) => (
+                {visibleProjects.map((project, index) => (
                     <div key={index} className="border-4 border-black dark:border-white neo-shadow-lg bg-white dark:bg-black h-full flex flex-col neo-hover group">
                         <div className="p-8 pb-0">
                             <div className="flex items-center justify-between mb-6">
@@ -56,6 +60,22 @@ export default function ProjectExperienceSection() {
                     </div>
                 ))}
             </div>
+
+            {projects.length > 3 && (
+                <div className="mt-16 text-center">
+                    <Button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        size="lg"
+                        className="h-16 px-10 text-xl font-black uppercase border-4 border-black dark:border-white neo-shadow-lg neo-hover bg-white dark:bg-black text-black dark:text-white"
+                    >
+                        {isExpanded ? (
+                            <>Show Less <ChevronUp className="ml-3 w-6 h-6" /></>
+                        ) : (
+                            <>See More Projects <ChevronDown className="ml-3 w-6 h-6" /></>
+                        )}
+                    </Button>
+                </div>
+            )}
         </Container>
     );
 }

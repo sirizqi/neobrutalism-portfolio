@@ -30,26 +30,32 @@ export default async function BlogsPage({ searchParams }) {
                 {blogs && blogs.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {blogs.map((blog) => {
-                            const { title, slug, content, creator, coverImage } = blog.fields;
+                            const { title, tittle, slug, content, creator, cover } = blog.fields;
+                            const displayTitle = typeof tittle === 'string' ? tittle : (typeof title === 'string' ? title : 'Untitled Blog');
 
                             // Safe content preview extraction
                             let preview = "Read more...";
+                            let fullText = "";
+
                             if (typeof content === 'string') {
-                                preview = content.substring(0, 80);
+                                fullText = content;
                             } else if (content?.content) {
                                 // Extract text from Rich Text
-                                const text = content.content
+                                fullText = content.content
                                     .map(p => p.content?.map(t => t.value).join(''))
                                     .join(' ');
-                                preview = text.substring(0, 80);
+                            }
+
+                            if (fullText) {
+                                preview = fullText.length > 20 ? fullText.substring(0, 20) + "..." : fullText;
                             }
 
                             return (
                                 <Card key={blog.sys.id} className="border-4 border-black dark:border-white neo-shadow bg-white dark:bg-black overflow-hidden flex flex-col group transition-all hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none">
                                     <div className="relative h-48 overflow-hidden border-b-4 border-black dark:border-white">
                                         <img
-                                            src={coverImage?.fields?.file?.url ? `https:${coverImage.fields.file.url}` : 'https://placehold.co/800x400?text=Blog+Cover'}
-                                            alt={title}
+                                            src={cover?.fields?.file?.url ? `https:${cover.fields.file.url}` : 'https://placehold.co/800x400?text=Blog+Cover'}
+                                            alt={displayTitle}
                                             className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                                         />
                                     </div>
@@ -57,20 +63,32 @@ export default async function BlogsPage({ searchParams }) {
                                     <CardHeader className="p-6">
                                         <div className="flex items-center gap-4 text-xs font-black uppercase text-muted-foreground mb-2">
                                             <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {new Date(blog.sys.createdAt).toLocaleDateString()}</span>
-                                            <span className="flex items-center gap-1">
-                                                <User className="w-3 h-3" />
-                                                {typeof creator === 'object' && creator?.fields?.name
-                                                    ? creator.fields.name
-                                                    : typeof creator === 'string' ? creator : 'Author'}
-                                            </span>
+                                            <div className="flex items-center gap-2">
+                                                {typeof creator === 'object' && creator?.fields?.avatar?.fields?.file?.url ? (
+                                                    <div className="w-5 h-5 rounded-full overflow-hidden border border-black neo-shadow">
+                                                        <img
+                                                            src={`https:${creator.fields.avatar.fields.file.url}`}
+                                                            alt={creator.fields.creatorName || 'Author'}
+                                                            className="w-full h-full object-cover"
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <User className="w-3 h-3" />
+                                                )}
+                                                <span className="text-xs font-black uppercase">
+                                                    {typeof creator === 'object' && creator?.fields?.creatorName
+                                                        ? creator.fields.creatorName
+                                                        : typeof creator === 'string' ? creator : 'Author'}
+                                                </span>
+                                            </div>
                                         </div>
-                                        <CardTitle className="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-primary transition-colors">
-                                            {typeof title === 'string' ? title : 'Untitled Blog'}
+                                        <CardTitle className="text-2xl font-black uppercase tracking-tighter leading-tight group-hover:text-primary transition-colors text-wrap">
+                                            {displayTitle}
                                         </CardTitle>
                                     </CardHeader>
 
                                     <CardContent className="px-6 pb-6 flex-grow text-muted-foreground font-bold line-clamp-2">
-                                        {preview}...
+                                        {preview}
                                     </CardContent>
 
                                     <CardFooter className="p-6 pt-0 mt-auto">

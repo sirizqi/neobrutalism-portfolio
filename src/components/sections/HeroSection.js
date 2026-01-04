@@ -51,7 +51,7 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            <div className="flex-shrink-0 relative mt-10 lg:mt-24">
+            {/* <div className="flex-shrink-0 relative mt-10 lg:mt-24">
                 <div className="absolute -inset-4 bg-primary border-4 border-black dark:border-white neo-shadow rotate-3 -z-10" />
                 <div className="relative border-8 border-black dark:border-white neo-shadow-lg overflow-hidden w-48 h-48 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] mx-auto lg:mx-0">
                     <Avatar className="w-full h-full rounded-none">
@@ -61,7 +61,7 @@ export default function HeroSection() {
                         </AvatarFallback>
                     </Avatar>
                 </div>
-            </div>
+            </div> */}
         </Container>
     );
 }

@@ -30,7 +30,7 @@ export const portfolioData = {
       ],
     },
     {
-      company: "Komerce (PT. Kampung Marketerindo)",
+      company: "Komerce (PT. Kampung Marketerindo Berdaya)",
       logo: "/logos/innovation-hub.png",
       role: "Technical Product Manager",
       period: "Dec 2022 - May 2025",
@@ -44,7 +44,7 @@ export const portfolioData = {
       ],
     },
     {
-      company: "Komerce (PT. Kampung Marketerindo)",
+      company: "Komerce (PT. Kampung Marketerindo Berdaya)",
       logo: "/logos/startup-x.png",
       role: "Associate Product Manager",
       period: "Jun 2022 - Nov 2022",
@@ -128,7 +128,7 @@ export const portfolioData = {
       ],
     },
     {
-      title: "KomAds (PT. Kampung Marketerindo)",
+      title: "KomAds (PT. Kampung Marketerindo Berdaya)",
       logo: "/logos/fintrack.png",
       type: "Technical Product Manager",
       website: "https://komads.id",
