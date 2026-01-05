@@ -6,11 +6,11 @@ export const portfolioData = {
     email: "rizqisarasajati1109@gmail.com", // Placeholder if not provided
   },
   social: {
-    linkedin: "https://linkedin.com/in/rizqisarasajati",
-    github: "https://github.com/rizqisarasajati",
-    instagram: "https://instagram.com/rizqisarasajati",
-    x: "https://x.com/rizqisarasajati",
-    threads: "https://threads.net/@rizqisarasajati",
+    linkedin: "https://www.linkedin.com/in/rizqis/",
+    github: "https://github.com/sirizqi",
+    instagram: "https://www.instagram.com/sirizqi_/",
+    x: "https://x.com/sirizqi11",
+    threads: "https://www.threads.com/@sirizqi_",
     whatsapp: "https://wa.me/6285882266490",
     email: "mailto:rizqisarasajati1109@gmail.com",
   },
@@ -23,10 +23,10 @@ export const portfolioData = {
       location: "On-site • Yogyakarta",
       website: "https://kiriminaja.com",
       description: [
-        "Led a cross-functional team of 20+ engineers and designers.",
-        "Increased user retention by 25% through data-driven product iterations.",
-        "Successfully launched 3 new major features in the first year.",
-        "Managed stakeholder expectations and prioritized product roadmap.",
+        "Lead 2 development teams with a total of 6 Engineers, 4 QA Engineers, 3 Product Operations, and 1 Product Designer",
+        "Lead development of the application's main system by integrating 16 Third-party Logistics, 4 Banks, 1 Payment Gateway, and 2 OMS Partnerships. ",
+        "Lead development across multiple platform like Wordpress and Shopify integration to KiriminAja Core System for Logistics accomodation",
+        "Managed stakeholder expectations and prioritized product roadmap for Core system development",
       ],
     },
     {
@@ -37,10 +37,9 @@ export const portfolioData = {
       location: "On-site • Purbalingga",
       website: "https://komerce.id",
       description: [
-        "Oversaw the development of a suite of SaaS products.",
-        "Reduced time-to-market by 30% using agile methodologies.",
-        "Implemented a new user feedback system that significantly improved product quality.",
-        "Mentored junior product managers and designers.",
+        "Managing 12 product life cycle during business, technical requirement and maximize the product development.",
+        "Leading 8 PM's and APM's to deliver the product on time.",
+        "Leading 1 development teams with a total 2 Engineers, 1 QA Engineers, and 1 Product Designer for the product development base on OpenAPI product for B2B partnerships in Logistics Accomodation.",
       ],
     },
     {
@@ -51,10 +50,9 @@ export const portfolioData = {
       location: "On-site • Purbalingga",
       website: "https://komerce.id",
       description: [
-        "Designed the UI/UX for a major mobile application from scratch.",
-        "Conducted user research and usability testing to validate design decisions.",
-        "Collaborated closely with engineers to ensure design fidelity.",
-        "Established a comprehensive design system for the company.",
+        "Assist the Product Manager in conducting analysis, planning, and development of logistics product aggregators.",
+        "Conducting market analysis and define product-market fit.",
+        "Leading 1 development teams with a total 2 Engineers, 1 QA Engineers, and 1 Product Designer for the product development for end users.",
       ],
     },
     {
@@ -65,10 +63,10 @@ export const portfolioData = {
       location: "Remote • Yogyakarta",
       website: "https://niagahoster.com",
       description: [
-        "Created user-centered designs for various client projects.",
-        "Built interactive prototypes for stakeholder presentations.",
-        "Worked on improving the accessibility of web products.",
-        "Collaborated with marketing teams on visual assets.",
+        "Collaborated with cross-functional teams (PMs, Developers, QA, and Marketing) to deliver design solutions that increased conversion rate and reduced user friction on high-traffic landing pages.",
+        "Conducted user research and usability testing to validate design decisions.",
+        "Collaborated closely with engineers to ensure design fidelity.",
+        "Established a comprehensive design system for the company.",
       ],
     },
     {
@@ -79,10 +77,10 @@ export const portfolioData = {
       location: "On-site • Purwokerto",
       website: "https://webding.com",
       description: [
-        "Assisted senior designers in creating visual assets for campaigns.",
-        "Learned industry-standard design tools and workflows.",
-        "Participated in brainstorms for creative projects.",
-        "Managed basic website updates for various clients.",
+        "Conducted comprehensive market and user research for the digital invitation platform, revealing critical behavioral patterns and unmet needs—insights that informed key UX and feature improvements, boosting early user retention ",
+        "Led the product development process, including defining product requirements, creating wireframes, and implementing core features.",
+        "Defined and tracked key performance indicators (KPIs) to measure product success and user engagement.",
+        "Conducted user research and usability testing to validate design decisions.",
       ],
     },
     {
@@ -93,10 +91,8 @@ export const portfolioData = {
       location: "On-site • Purwokerto",
       website: "https://web.smkn2purwokerto.sch.id/",
       description: [
-        "Assisted senior designers in creating visual assets for campaigns.",
-        "Learned industry-standard design tools and workflows.",
-        "Participated in brainstorms for creative projects.",
-        "Managed basic website updates for various clients.",
+        "Teaching MDLC (Multimedia Development Life Cycle) for digital product development",
+        "Conducting evaluations, reporting, and guidance related to student development"
       ],
     },
     {
@@ -107,10 +103,10 @@ export const portfolioData = {
       location: "Hybrid • Purwokerto",
       website: "https://mentarisatria.net.id/",
       description: [
-        "Worked on diverse creative projects for international clients.",
-        "Developed branding and visual identities for small businesses.",
-        "Managed end-to-end project delivery and client communications.",
-        "Built a strong portfolio of high-quality design work.",
+        "Conducted comprehensive software requirements research, enabling optimal tech stack decisions and reducing overall development time.",
+        "Conducted software architecture design and development, ensuring scalability and maintainability.",
+        "Conducted software testing and quality assurance, ensuring high-quality deliverables.",
+        "Conducted software deployment and maintenance, ensuring smooth operation.",
       ],
     },
   ],
@@ -121,7 +117,7 @@ export const portfolioData = {
       type: "Product Manager",
       website: "https://koda.so",
       description: [
-        "End-to-end product management for a project management tool.",
+        "Led the development of a web-based AI customer service platform integrated across WhatsApp, Facebook Messenger, and Instagram DM, enabling real-time, automated customer engagement at scale.",
         "Conducted market analysis and defined product-market fit.",
         "Led the engineering team in implementing core task management features.",
         "Defined KPIs and tracked product success metrics.",
@@ -133,10 +129,9 @@ export const portfolioData = {
       type: "Technical Product Manager",
       website: "https://komads.id",
       description: [
-        "Designed the entire user experience for a personal finance tracker.",
-        "Developed high-fidelity prototypes for iOS and Android.",
-        "Conducted extensive user interviews to understand financial pain points.",
-        "Iterated on design based on user feedback and usability tests.",
+        "Played a key role in supporting strategic partnership pitches with Meta Indonesia, strengthening business positioning for Komads—Komerce’s web-based advertising product targeting B2B segments.",
+        "Contributed to 5-month business and technical analysis for seamless Meta Ads API integration, identifying pain points and aligning solutions across product and engineering.",
+        "Directed the full Software Development Life Cycle (SDLC) for Komads’ Meta API integration, ensuring end- to-end alignment across 6 engineering divisions and 4 product units, resulting in a timely and stable MVP release."
       ],
     },
     {
@@ -145,10 +140,22 @@ export const portfolioData = {
       type: "Product Manager",
       website: "https://passionjapanedu.com/",
       description: [
-        "Developed the front-end architecture for a scalable e-commerce site.",
-        "Integrated payment gateways and third-party logistics APIs.",
-        "Optimized page speed and SEO performance.",
-        "Implemented complex state management for the shopping cart.",
+        "Lead the Development of LMS (Learning Management System) for PassionJapan, a Japanese language education platform.",
+        "Conducted market analysis and defined product-market fit.",
+        "Led the engineering team in implementing core task management features.",
+        "Defined KPIs and tracked product success metrics.",
+      ],
+    },
+    {
+      title: "Mining Industry of Indonesia",
+      logo: "/logos/mindid.png",
+      type: "Product Management",
+      website: "https://mindid.id",
+      description: [
+        "Conducted detailed research and analysis of software needs for a web-based coal mining exploration system and enabling solutions.",
+        "Led the development of a web-based coal mining exploration system and enabling solutions.",
+        "Presented the project roadmap and prototype to stakeholders and competition judges, earning recognition for its high business value and innovation potential.",
+        "Collaborated closely with cross-functional teams in an agile environment to deliver the MVP within a tight deadline, while maintaining user-centric focus and technical accuracy.",
       ],
     },
     {
@@ -157,10 +164,9 @@ export const portfolioData = {
       type: "Product Management",
       website: "https://binaracademy.id",
       description: [
-        "Managed the development of a patient portal for a regional health cluster.",
-        "Ensured compliance with data privacy regulations (HIPAA/GDPR).",
-        "Coordinated between medical professionals and developers.",
-        "Led the pilot launch and gathered initial user data.",
+        "Led a 1-month design thinking initiative for revamping the OK Home app, collaborating closely with fellow Product Managers and 3 UI/UX Designers to redesign core user flows and enhance overall user experience.",
+        "Created comprehensive documentation—User Journey Map, Eisenhower Matrix, and Stakeholder Pitch Materials—for the new time addition calculator feature, ensuring alignment between business needs and development execution",
+        "Strengthened product collaboration skills through agile sprints, design research, and data- driven validation within a fast-paced, real-world simulation environment.",
       ],
     },
   ],
@@ -168,10 +174,10 @@ export const portfolioData = {
     {
       name: "Product Management",
       skills: [
-        { label: "Jira", icon: "Trello" },
+        { label: "Task", icon: "Trello" },
         { label: "Product Strategy", icon: "TrendingUp" },
-        { label: "Roadmapping", icon: "Map" },
-        { label: "Agile/Scrum", icon: "Users" },
+        { label: "Roadmap", icon: "Map" },
+        { label: "Scrum", icon: "Users" },
       ],
     },
     {
@@ -180,34 +186,33 @@ export const portfolioData = {
         { label: "Figma", icon: "Figma" },
         { label: "User Research", icon: "Search" },
         { label: "UI/UX", icon: "Layout" },
-        { label: "Prototyping", icon: "Workflow" },
+        { label: "Prototype", icon: "Workflow" },
       ],
     },
     {
       name: "Engineering",
       skills: [
-        { label: "React / Next.js", icon: "Code" },
+        { label: "Next.js", icon: "Code" },
         { label: "Tailwind CSS", icon: "Palette" },
-        { label: "PostgreSQL", icon: "Database" },
+        { label: "Postgres", icon: "Database" },
         { label: "Node.js", icon: "Cpu" },
       ],
     },
     {
       name: "Data & Analytics",
       skills: [
-        { label: "Mixpanel", icon: "PieChart" },
-        { label: "Google Analytics", icon: "BarChart" },
+        { label: "Metabase", icon: "PieChart" },
+        { label: "PowerBI", icon: "BarChart" },
         { label: "SQL", icon: "Terminal" },
-        { label: "Hotjar", icon: "Flame" },
+        { label: "Python", icon: "Database" },
       ],
     },
     {
       name: "Soft Skills",
       skills: [
-        { label: "Team Management", icon: "Users" },
+        { label: "Team Work", icon: "Users" },
         { label: "Leadership", icon: "UserCheck" },
-        { label: "Stakeholder Management", icon: "Briefcase" },
-        { label: "Communication", icon: "MessageSquare" },
+        { label: "Communi cation", icon: "MessageSquare" },
         { label: "Critical Thinking", icon: "Lightbulb" },
       ],
     },

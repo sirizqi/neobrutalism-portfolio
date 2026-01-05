@@ -55,10 +55,10 @@ export default function CommandKSearch({ blogs = [] }) {
                                     router.push(`/blogs/${blog.fields.slug}`);
                                     setOpen(false);
                                 }}
-                                className="font-bold flex gap-2"
+                                className="font-medium flex gap-2"
                             >
                                 <FileText className="w-4 h-4" />
-                                {blog.fields.title}
+                                {blog.fields.tittle}
                             </CommandItem>
                         ))}
                     </CommandGroup>
