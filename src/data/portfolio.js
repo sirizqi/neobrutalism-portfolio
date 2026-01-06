@@ -233,7 +233,7 @@ export const portfolioData = {
     {
       type: "training",
       title: "Training",
-      price: "Start from Rp150.000 / session",
+      price: "Flexible",
       description: "Mentorship and training sessions for teams or individuals.",
       points: [
         "Product Manager & Design core skills",
@@ -245,7 +245,7 @@ export const portfolioData = {
     {
       type: "project",
       title: "Project",
-      price: "Start from Rp150.000 / hour",
+      price: "Can pay Hourly or Full Project",
       description: "Consulting and implementation for your product needs.",
       points: [
         "End-to-end Product Management",

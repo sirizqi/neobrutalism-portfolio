@@ -9,7 +9,7 @@ export default function HeroSection() {
     const { personal } = portfolioData;
 
     return (
-        <Container id="hero" className="flex flex-col lg:flex-row items-start gap-16 py-32 md:py-48">
+        <Container id="hero" className="flex flex-col lg:flex-row items-start gap-16 py-32 md:py-20">
             <div className="flex-1 space-y-10 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-black border-4 border-black dark:border-white neo-shadow font-black uppercase text-sm animate-bounce">
                     <MessageSquare className="w-5 h-5 text-primary" />
